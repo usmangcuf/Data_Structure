@@ -30,7 +30,7 @@ int main()
         cout << "Enter the number: " << i;
         cin >> a[i];
     }
-    insertionSort(a, 5);
+    BubbleSort(a, 5);
     for (i = 0; i < 5; i++)
     {
         cout << "a[" << i << "]" << a[i] << endl;
