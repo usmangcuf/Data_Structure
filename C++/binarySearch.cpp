@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 void insertionSort(int arr[], int n)
 {
@@ -35,13 +34,20 @@ int binarysearch(int arr[], int l, int r, int x)
     return -1;
 }
 
+int linearSearch(int arr[], int n, int x)
+{
+    for (int i = 0; i < n; i++)
+        if (arr[i] == x)
+            return i;
+    return -1;
+}
 int main()
 {
 
     int i, a[5],x,loc;
     for (i = 0; i < 5; i++)
     {
-        cout << "Enter the number: " << i;
+        cout << "Enter the number: " << "a["<<i<<"]";
         cin >> a[i];
     }
     insertionSort(a, 5);
