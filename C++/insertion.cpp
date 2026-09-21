@@ -23,13 +23,13 @@ int main()
     int i, a[5];
     for (i = 0; i < 5; i++)
     {
-        cout << "Enter the number: " << i;
+        cout << "Enter the number: a[" << i<<"]";
         cin >> a[i];
     }
     insertionSort(a, 5);
     for (i = 0; i < 5; i++)
     {
-        cout << "a[" << i << "]" << a[i] << endl;
+        cout << "a[" << i << "]=" << a[i] << endl;
     }
 
     return 0;
