@@ -69,14 +69,14 @@ void MergeSort(int arr[], int n)
 int main()
 {
 
-    int i, a[5];
-    for (i = 0; i < 5; i++)
+    int i, a[10];
+    for (i = 0; i < 10; i++)
     {
         cout << "Enter the number: a[" << i << "]";
         cin >> a[i];
     }
-    MergeSort(a, 5);
-    for (i = 0; i < 5; i++)
+    MergeSort(a, 10);
+    for (i = 0; i < 10; i++)
     {
         cout << "After sorting array element  a[" << i << "] is =" << a[i] << endl;
     }
