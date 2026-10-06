@@ -10,7 +10,7 @@ node *link;
 } *start;
 
 /////////////////////////////////////////////////////////////
-/////////////////////Node Deletion///////////////////////////
+/////////////////////Node reading from file///////////////////////////
 void readfile()
 {
 	
@@ -37,6 +37,28 @@ void readfile()
 		
 	}
 }
+/// @brief ////////////////////////////////////////////////////////////////
+/////////////////////////Node Writing to file///////////////////////////
+void writefile()
+{
+	node *next;
+	FILE *fp;
+	fp = fopen ( "link.dat", "wb" ) ;
+	if ( fp == NULL )
+	{
+	puts ( "Cannot open file" ) ;
+	exit(0) ;
+	}
+	next=start;
+	while(next!=NULL)
+	{
+		fwrite ( next, sizeof ( node), 1, fp ) ;
+		next=next->link;
+	}
+	fclose(fp);
+}
+/////////////////////////////////////////////////////////////////
+/////////////////////////Node Deletion////////////////////////////// 
 void del(void)
 {
 int i;
@@ -284,7 +306,7 @@ do
   			shiftr();
       	break;
 	case 9:
-  			write();
+  			writefile();
       	break;
 
    	default:
