@@ -8,54 +8,46 @@ struct node
 int data;
 node *link;
 } *start;
-
-/////////////////////////////////////////////////////////////
-/////////////////////Node reading from file///////////////////////////
 void readfile()
 {
-	
-	node *next,*temp;
-	FILE *fp;
-	fp = fopen ( "link.dat", "rb" ) ;
-	if ( fp == NULL )
-	{
-	puts ( "Cannot open file" ) ;
-	exit(0) ;
-	}
-	if(start==NULL)
-	{
-		start=new node;
-		next=start;
-		while(fread ( &next, sizeof ( node), 1, fp ) == 1 )
-		{
-			temp=new node;
-			
-			next=next->link;
-			next=temp;
-		}
-			
-		
-	}
+    FILE *fp = fopen("link.dat", "rb");
+
+    if (fp == NULL)
+    {
+        cout << "Cannot open file\n";
+        return;
+    }
+
+    int value;
+
+    while (fread(&value, sizeof(int), 1, fp) == 1)
+    {
+        addnode(value);
+    }
+
+    fclose(fp);
 }
-/// @brief ////////////////////////////////////////////////////////////////
-/////////////////////////Node Writing to file///////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////Node reading from file///////////////////////////
 void writefile()
 {
-	node *next;
-	FILE *fp;
-	fp = fopen ( "link.dat", "wb" ) ;
-	if ( fp == NULL )
-	{
-	puts ( "Cannot open file" ) ;
-	exit(0) ;
-	}
-	next=start;
-	while(next!=NULL)
-	{
-		fwrite ( next, sizeof ( node), 1, fp ) ;
-		next=next->link;
-	}
-	fclose(fp);
+    FILE *fp = fopen("link.dat", "wb");
+
+    if (fp == NULL)
+    {
+        cout << "Cannot open file\n";
+        return;
+    }
+
+    node *next = start;
+
+    while (next != NULL)
+    {
+        fwrite(&next->data, sizeof(int), 1, fp);
+        next = next->link;
+    }
+
+    fclose(fp);
 }
 /////////////////////////////////////////////////////////////////
 /////////////////////////Node Deletion////////////////////////////// 
@@ -226,23 +218,9 @@ while(next->link!=NULL)
 	next=next->link;
 next->link=temp;
 }
-void write()
-{
-FILE *fp;
-node *next;
-next=start;
-fp = fopen ("link.dat","wb");
 
-while(next!=NULL)
-{
 	
-fwrite ( next, sizeof ( node ), 1, fp ) ;
-next=next->link;
-	
-	
-}
-	
-}
+
 int main()
 {
 int i;
