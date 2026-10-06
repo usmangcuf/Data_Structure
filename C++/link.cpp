@@ -116,30 +116,6 @@ while(next!=NULL)
    }
 
 }
-/////////////////////////////////////////////////////////////
-///////////////////Add Node /////////////////////////////////
-void addnode(int a)
-{
-	node *next,*temp;
-	if(start==NULL)
-	{
-	//first node
- 	start=new node;
-	start->data=a;
-	start->link=NULL;
-	}// end if  only execute for first node
-	else
-	{
- 	next=start;
-   while(next->link!=NULL)
- 		next=next->link;
- 	temp=new node;
- 	temp->data=a;
- 	temp->link=NULL;
- 	next->link=temp;
-	} // end else execute after first node
-
-} // end addnode function
 //////////////////////////////////////////////////////////////
 ///////////////////////Main Function//////////////////////////
 void insertbeg(int a)
