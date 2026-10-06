@@ -270,48 +270,48 @@ do
       	cin>>i;
       	addnode(i);
       	break;
-   	case 2:
+   		case 2:
   			show();
-      	break;
-   	case 3:
+      		break;
+   		case 3:
   			del();
-      	break;
-   	case 4:
+    	  	break;
+   		case 4:
   			cout<<"Enter Integer value to search the list";
-         cin>>i;
+        	 cin>>i;
   			search(i);
-      	break;
-   	case 5:
-      	cout<<"Enter Integer value to insert at beginning";
-         cin>>i;
+      		break;
+   		case 5:
+      		cout<<"Enter Integer value to insert at beginning";
+       	    cin>>i;
   			insertbeg(i);
-      	break;
-   	case 6:
-      	cout<<"Enter the node before which insert";
-         cin>>i;
-         cout<<"Enter the value to be inserted";
-         int val;
-         cin>>val;
+      		break;
+   		case 6:
+      		cout<<"Enter the node before which insert";
+         	cin>>i;
+         	cout<<"Enter the value to be inserted";
+         	int val;
+         	cin>>val;
   			insertbef(i,val);
-      	break;
-   	case 7:
-      	cout<<"Enter the node after which insert";
-         cin>>i;
-         cout<<"Enter the value to be inserted";
+      		break;
+   		case 7:
+      		cout<<"Enter the node after which insert";
+         	cin>>i;
+         	cout<<"Enter the value to be inserted";
          //int val;
-         cin>>val;
+         	cin>>val;
   			insertaft(i,val);
-      	break;
-   	case 8:
+      		break;
+   		case 8:
   			shiftr();
-      	break;
-	case 9:
+      		break;
+		case 9:
   			writefile();
-      	break;
+      		break;
 
    	default:
   		break;
 		}    // end switch
-	}while(ch==1||ch==2||ch==3||ch==5||ch==4||ch==7||ch==6||ch==8); // end do while
+	}while(ch==0||ch==1||ch==2||ch==3||ch==5||ch==4||ch==7||ch==6||ch==8); // end do while
 return 0;
 }
